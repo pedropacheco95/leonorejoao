@@ -15,6 +15,11 @@
             <p>{{product.price}}€</p>
             {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
         </div>
+        {% else %}
+        <div>
+            <p>&nbsp;</p>
+            &nbsp;
+        </div>
         {% endif %}
     </a>
 </div>
@@ -34,6 +39,12 @@
             <p>{{product.name}}</p>
             <p>{{product.price}}€</p>
             {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
+        </div>
+        {% else %}
+        <div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            &nbsp;
         </div>
         {% endif %}
     </a>

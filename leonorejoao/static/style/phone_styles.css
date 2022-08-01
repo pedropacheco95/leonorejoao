@@ -176,4 +176,8 @@
     .index_car_container{
         min-height: 4rem!important;
     }
+
+    .hotel_card {
+        width: 80vw!important;
+    }
 }
