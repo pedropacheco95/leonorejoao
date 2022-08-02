@@ -8,7 +8,6 @@ bp = Blueprint('main', __name__)
 @bp.route('/', methods=('GET', 'POST'))
 def index():
     hotels = Hotel.query.all()
-    print(hotels)
     return render_template('main/index.html',hotels=hotels)
 
 @bp.route('/faqs', methods=('GET', 'POST'))

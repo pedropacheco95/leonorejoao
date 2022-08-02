@@ -122,16 +122,12 @@ def faqs():
 def specific_info():
     specific_info = SpecificInfo.query.first()
     if request.method == 'POST':
-        title = request.form.get('title')
-        mbway1 = request.form.get('mbway1')
-        mbway2 = request.form.get('mbway2')
-        iban = request.form.get('iban')
-        information = {
-            'title':title,
-            'mbway1':mbway1,
-            'mbway2':mbway2,
-            'iban':iban
-        }
+        information = {}
+        keys = ['title','mbway1','mbway2','iban']
+        for key in keys:
+            information[key] = request.form.get(key)
+            if not information[key] and key in specific_info.information.keys():
+                information[key] = specific_info.information[key]
         specific_info.information = information
         specific_info.save()
         return redirect(url_for('edit.specific_info'))
