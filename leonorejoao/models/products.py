@@ -48,5 +48,7 @@ class Product(db.Model ,model.Model,model.Base):
             self.store = values['store']
         if values['show_price'] != self.show_price:
             self.show_price = values['show_price']
+        if values['priority'] != self.priority:
+            self.priority = values['priority']
         self.save()
         return True
