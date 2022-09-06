@@ -180,4 +180,8 @@
     .hotel_card {
         width: 80vw!important;
     }
+
+    .dresscode{
+        font-size: 1.5rem!important;
+    }
 }
